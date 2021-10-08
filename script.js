@@ -4,50 +4,46 @@
 */
 
 $(document).ready(function(){
-    // your code here
+    
+    //find the current position and display on the screen.
+    navigator.geolocation.getCurrentPosition((pos) => {
+        $('#content h2').append('<h3> The latitude is: '+pos.coords.latitude+'. </h3>');
+        $('#content h2').append('<h3> The longitude is: '+pos.coords.longitude+'. </h3>');
+        $('#content h2').append('<h3> With a level of accuracy of: ' + pos.coords.accuracy + ' Meters.'+'</h3>');
 
-    navigator.geolocation.getCurrentPosition((position) => {
-        $('#content h2').append('<h3> The latitude is: '+position.coords.latitude+'. </h3>');
-        //$('.latitude').eq(0).html("The latitude is: " + position.coords.latitude);
-        $('#content h2').append('<h3> The longitude is: '+position.coords.longitude+'. </h3>');
-        //$('.longitude').eq(0).html(`The longitude is: ${position.coords.longitude}`);
-        $('#content h2').append('<h3> With a level of accuracy of: ' + position.coords.accuracy + ' Meters.'+'</h3>');
-        //store the latitude and longitude values in the localStorage and assignment to latitude and longitude.
-        localStorage.setItem("latitude",position.coords.latitude);
-        localStorage.setItem("longitude",position.coords.longitude);
-        let latitude = localStorage.getItem("latitude");
-        let longitude = localStorage.getItem("longitude");
-        //decide if latitude and longitude were stored in the localStorage.
-        if(localStorage.getItem("infiniteScrollEnabled") !== null) {
-            $('#content h2').append('<hr />');
-            $('#content h2').append('<h3>The latitude is: ' + latitude + ' and '+ 'the longitude is: '+ longitude+'. '+ '</h3>');
+    // decide if localStorage exists, if not, display a message, then store the position as the old location.
+        if(localStorage.getItem(infinityScrollEnabled)==null) {
+            $('#content h2').append('<h3>You are visiting for the first time! </h3>');
+            localStorage.setItem("lat1", pos.coords.latitude);
+            localStorage.setItem("lon1", pos.coords.longitude);
+            const lat1 = localStorage.getItem("lat1");
+            const lon1 = localStorage.getItem("lon1");
         } else {
-            $('#content h2').append('<h3>Hi, Welcome to Jason\'s blog </h3>');
+            //recall function distance to calculate distance beween two coordinates.
+            distance(pos.coords.longitude, pos.coords.latitude, lon1, lat1); 
+        }  
+        });
+
+        // Code below from stackoverflow.com with minor modifications.
+        if (typeof(Number.prototype.toRad) === "undefined") {
+            Number.prototype.toRad = function() {
+            return this * Math.PI / 180;
+            }
         }
+       
+       function distance(lon2, lat2, lon1, lat1) {
+            var R = 6371; // Radius of the earth in km
+            var dLat = (lat2-lat1).toRad();  // Javascript functions in radians
+            var dLon = (lon2-lon1).toRad(); 
+            var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                    Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
+                    Math.sin(dLon/2) * Math.sin(dLon/2); 
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+            var d = R * c; // Distance in km
+            return d;
+          }
+          
+
     });
-
-
-
-
-
-    // function to calculate the distance in metres between two lat/long pairs on Earth
-    // Haversine formula - https://en.wikipedia.org/wiki/Haversine_formula
-    // Aren't those cool variable names? Yah gotta love JavaScript
-    function calcDistance(lat1, lon1, lat2, lon2){
-        var toRadians = function(num) {
-            return num * Math.PI / 180;
-        }
-        var R = 6371000; // radius of Earth in metres
-        var φ1 = toRadians(lat1);
-        var φ2 = toRadians(lat2);
-        var Δφ = toRadians(lat2-lat1);
-        var Δλ = toRadians(lon2-lon1);
-
-        var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) + Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ/2) * Math.sin(Δλ/2);
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-        return ( R * c );
-    }
-});
 
 
