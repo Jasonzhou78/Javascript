@@ -12,7 +12,9 @@ $(document).ready(function(){
         $('#content h2').append('<h3> The longitude is: '+position.coords.longitude+'. </h3>');
         //$('.longitude').eq(0).html(`The longitude is: ${position.coords.longitude}`);
         $('#content h2').append('<h3> With a level of accuracy of: ' + position.coords.accuracy + ' Meters.'+'</h3>');
-        localStorage.setItem("lastname", "Smith");
+        let lastname = localStorage.setItem("lastname", "Smith");
+        console.log(lastname);
+        localStorage.getItem("lastname");
         // check if a key exist in local storage.
         /* if("user" in localStorage){
             alert('yes');
