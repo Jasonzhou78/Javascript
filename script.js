@@ -12,19 +12,15 @@ $(document).ready(function(){
         $('#content h2').append('<h3> The longitude is: '+position.coords.longitude+'. </h3>');
         //$('.longitude').eq(0).html(`The longitude is: ${position.coords.longitude}`);
         $('#content h2').append('<h3> With a level of accuracy of: ' + position.coords.accuracy + ' Meters.'+'</h3>');
-        let lastname = localStorage.setItem("lastname", "Smith");
-        console.log(lastname);
-        $('#content h2').append("<h3> this is the local storage value: "+localStorage.getItem("lastname")+".</h3>");
-        // check if a key exist in local storage.
-        /* if("user" in localStorage){
-            alert('yes');
-         } else {
-            alert('no');
-         } */
-         //check if local key exist in another way
+        //store the latitude and longitude values in the localStorage and assignment to latitude and longitude.
+        localStorage.setItem("latitude",position.coords.latitude);
+        localStorage.setItem("longitude",position.coords.longitude);
+        let latitude = localStorage.getItem("latitude");
+        let longitude = localStorage.getItem("longitude");
+        //decide if latitude and longitude were stored in the localStorage.
         if(localStorage.getItem("infiniteScrollEnabled") !== null) {
             $('#content h2').append('<hr />');
-            //$('#content h2').append('<h3>The location is:' + localStorage.getItem(key) + ' </h3>');
+            $('#content h2').append('<h3>The latitude is: ' + latitude + ' and '+ 'the longitude is: '+ longitude+'. '+ '</h3>');
         } else {
             $('#content h2').append('<h3>Hi, Welcome to Jason\'s blog </h3>');
         }
