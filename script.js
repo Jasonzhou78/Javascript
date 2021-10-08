@@ -14,7 +14,7 @@ $(document).ready(function(){
         $('#content h2').append('<h3> With a level of accuracy of: ' + position.coords.accuracy + ' Meters.'+'</h3>');
         let lastname = localStorage.setItem("lastname", "Smith");
         console.log(lastname);
-        localStorage.getItem("lastname");
+        $('#content h2').append("<h3> this is the local storage value: "+localStorage.getItem("lastname")+".</h3>");
         // check if a key exist in local storage.
         /* if("user" in localStorage){
             alert('yes');
