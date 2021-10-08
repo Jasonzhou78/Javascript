@@ -13,11 +13,11 @@ $(document).ready(function(){
         //$('.longitude').eq(0).html(`The longitude is: ${position.coords.longitude}`);
         $('#content h2').append('<h3> With a level of accuracy of: ' + position.coords.accuracy + ' Meters.'+'</h3>');
         // check if a key exist in local storage.
-        if("user" in localStorage){
+        /* if("user" in localStorage){
             alert('yes');
          } else {
             alert('no');
-         }
+         } */
          //check if local key exist in another way
         if(localStorage.getItem("infiniteScrollEnabled") !== null) {
             $('#content h2').append('<hr />');
