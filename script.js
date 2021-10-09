@@ -14,10 +14,12 @@ $(document).ready(function(){
         $('#content h2').append('<h3> With a level of accuracy of: ' + pos.coords.accuracy + ' Meters.'+'</h3>');
 
     // decide if localStorage exists, if not, display a message, then store the position as the old location.
-        if(localStorage.getItem("lat")==null) {
+        if(localStorage.getItem("lat")==null || localStorage.getItem("lon")==null)  {
             $('#content h2').append('<h3>You are visiting for the first time! </h3>');
-            localStorage.setItem("lat1", lat);
-            localStorage.setItem("lon1", lon);
+            localStorage.removeItem("lat1");
+            localStorage.removeItem("lon1");
+            localStorage.setItem("lat", lat);
+            localStorage.setItem("lon", lon);
             const lat1 = localStorage.getItem("lat");
             const lon1 = localStorage.getItem("lon");
         } else {
