@@ -16,15 +16,13 @@ $(document).ready(function(){
     // decide if localStorage exists, if not, display a message, then store the position as the old location.
         if(localStorage.getItem("lat")==null || localStorage.getItem("lon")==null)  {
             $('#content h2').append('<h3>You are visiting for the first time! </h3>');
-            localStorage.removeItem("lat1");
-            localStorage.removeItem("lon1");
             localStorage.setItem("lat", lat);
             localStorage.setItem("lon", lon);
             const lat1 = localStorage.getItem("lat");
             const lon1 = localStorage.getItem("lon");
         } else {
             //recall function distance to calculate distance beween two coordinates.
-            let distance = distance(lon,lat,lon1,lat1); 
+            //let distance = distance(lon,lat,lon1,lat1); 
             $('#content h2').append('<hr />');
             $('#content h2').append('<h3> The distance is meters.</h3>');
         }  
