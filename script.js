@@ -9,7 +9,7 @@ $(document).ready(function(){
     navigator.geolocation.getCurrentPosition((pos) => {
         let lat = pos.coords.latitude;
         let lon = pos.coords.longitude;
-        const lat1,lon1;
+        let lat1,lon1;
         $('#content h2').append('<h3> The latitude is: '+lat+'. </h3>');
         $('#content h2').append('<h3> The longitude is: '+lon+'. </h3>');
         $('#content h2').append('<h3> With a level of accuracy of: ' + pos.coords.accuracy + ' Meters.'+'</h3>');
@@ -23,16 +23,25 @@ $(document).ready(function(){
             lon1 = localStorage.getItem("lon");
         } else {
             //recall function distance to calculate distance beween two coordinates.
+         
             let d = distance(lon, lat, lon1, lat1); 
             $('#content h2').append('<hr />');
-            $('#content h2').append('<h3> The distance is '+ d +' meters.</h3>');
+            $('#content h2').append('<h3> The distance is meters. ' + d + '</h3>');
         }  
         });
 
-        // Code below from stackoverflow.com with minor modifications.
+        // function to calculate the distance of two points.
        
-       function distance(lon2, lat2, lon1, lat1) {
-            let d = 3963.0 * Math.acos((Math.sin(lat1) * Math.sin(lat2)) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(lon2-lon1));
+        function distance() {
+        function distance(lon2, lat2, lon1, lat1) {
+           let dlon = lon2 - lon1;
+            let dlat = lat2 - lat1;
+            let t1 = Math.pow((Math.sin(dlat * Math.PI/360)),2);
+            let t2 = Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180);
+            let t3 = Math.pow(Math.sin(dlon * Math.PI/360),2);
+            let a = t1 + t2 * t3;
+            let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            let d = 6373 * c;
             return d;
           }
           
