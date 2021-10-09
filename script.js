@@ -32,9 +32,8 @@ $(document).ready(function(){
 
         // function to calculate the distance of two points.
        
-        function distance() {
         function distance(lon2, lat2, lon1, lat1) {
-           let dlon = lon2 - lon1;
+            let dlon = lon2 - lon1;
             let dlat = lat2 - lat1;
             let t1 = Math.pow((Math.sin(dlat * Math.PI/360)),2);
             let t2 = Math.cos(lat1 * Math.PI/180) * Math.cos(lat2 * Math.PI/180);
