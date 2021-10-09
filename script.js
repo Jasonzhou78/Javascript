@@ -7,20 +7,24 @@ $(document).ready(function(){
     
     //find the current position and display on the screen.
     navigator.geolocation.getCurrentPosition((pos) => {
-        $('#content h2').append('<h3> The latitude is: '+pos.coords.latitude+'. </h3>');
-        $('#content h2').append('<h3> The longitude is: '+pos.coords.longitude+'. </h3>');
+        let lat = pos.coords.latitude;
+        let lon = pos.coords.longitude;
+        $('#content h2').append('<h3> The latitude is: '+lat+'. </h3>');
+        $('#content h2').append('<h3> The longitude is: '+lon+'. </h3>');
         $('#content h2').append('<h3> With a level of accuracy of: ' + pos.coords.accuracy + ' Meters.'+'</h3>');
 
     // decide if localStorage exists, if not, display a message, then store the position as the old location.
-        if(localStorage.getItem(infinityScrollEnabled)==null) {
+        if(localStorage.getItem("lat")==null) {
             $('#content h2').append('<h3>You are visiting for the first time! </h3>');
-            localStorage.setItem("lat1", pos.coords.latitude);
-            localStorage.setItem("lon1", pos.coords.longitude);
-            const lat1 = localStorage.getItem("lat1");
-            const lon1 = localStorage.getItem("lon1");
+            localStorage.setItem("lat1", lat);
+            localStorage.setItem("lon1", lon);
+            const lat1 = localStorage.getItem("lat");
+            const lon1 = localStorage.getItem("lon");
         } else {
             //recall function distance to calculate distance beween two coordinates.
-            distance(pos.coords.longitude, pos.coords.latitude, lon1, lat1); 
+            let distance = distance(lon,lat,lon1,lat1); 
+            $('#content h2').append('<hr />');
+            $('#content h2').append('<h3> The distance is meters.</h3>');
         }  
         });
 
