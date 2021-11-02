@@ -29,7 +29,7 @@ $(document).ready(function() {
         }
 
         toString() {
-            let ostring = `<div id="content-"+x.id.id>` + `<h4>${x.id.title}</h4>` + `<p>${x.id.description}</p>` + `<div>${x.id.categoryType}</div>` + `</div>`;
+            let ostring = `<div id="content-${x.id.id}">` + `<h4>${x.id.title}</h4>` + `<p>${x.id.description}</p>` + `<div>${x.id.categoryType}</div>` + `</div>`;
             return ostring;
         }
     }
@@ -42,7 +42,9 @@ $(document).ready(function() {
 
 
     for (let x of books) {
-        let text = `<div id="content-"+x.id.id>` + `<h4>${x.id.title}</h4>` + `<p>${x.id.description}</p>` + `<div>${x.id.categoryType}</div>` + `</div>`;
+        $("#content-list")
+        let text = `<div id="content-${x.id.id}">` + `<h4>${x.id.title}</h4>` + `<p>${x.id.description}</p>` + `<div>${x.id.categoryType}</div>` + `</div>`;
         $("#content-list").append(text);
+        console.log(toString());
     }
 });
