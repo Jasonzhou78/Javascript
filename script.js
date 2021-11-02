@@ -14,14 +14,21 @@ $(document).ready(function() {
 
             function updateContent(title, description, categoryType) {
                 if (title != null) {
+                    this.title = title;
                     return title;
                 }
                 if (description != null) {
+                    this.description = description;
                     return description;
                 }
                 if (categoryType != null) {
+                    this.categoryType = categoryType;
                     return categoryType;
                 }
+            }
+
+            function toString() {
+
             }
         }
     }
