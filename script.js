@@ -11,6 +11,9 @@ $(document).ready(function() {
             this.title = title;
             this.description = description;
             this.categoryType = categoryType;
+            updateContent(title, description, categoryType) {
+
+            }
         }
 
 
