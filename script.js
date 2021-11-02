@@ -45,6 +45,6 @@ $(document).ready(function() {
         $("#content-list")
         let text = `<div id="content-${x.id.id}">` + `<h4>${x.id.title}</h4>` + `<p>${x.id.description}</p>` + `<div>${x.id.categoryType}</div>` + `</div>`;
         $("#content-list").append(text);
-        console.log(toString());
+        alert(toString());
     }
 });
