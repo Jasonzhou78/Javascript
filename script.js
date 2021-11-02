@@ -28,11 +28,10 @@ $(document).ready(function() {
             }
         }
 
-        // prototype.toString = function addElement {
-        //     let ostring = `<div id="content-"+this.id>` + `<h4>${this.title}</h4>` + `<p>${this.description}</p>` + `<div>${this.categoryType}</div>` + `</div>`;
-        //     console.log(ostring);
-        //     return ostring;
-        // }
+        toString() {
+            let ostring = `<div id="content-"+x.id.id>` + `<h4>${x.id.title}</h4>` + `<p>${x.id.description}</p>` + `<div>${x.id.categoryType}</div>` + `</div>`;
+            return ostring;
+        }
     }
     books = new Array();
     books[0] = new ContentCard({ id: 0, title: "Douglas MacArthur American Warrior", description: "History of American General of Army", categoryType: "History" }),
@@ -40,17 +39,10 @@ $(document).ready(function() {
         books[2] = new ContentCard({ id: 2, title: "Paradise lost", description: "Satan's fall, Jesus's salvation", categoryType: "Poem" }),
         books[3] = new ContentCard({ id: 3, title: "HTML5 and CSS3", description: "Tutorial book", categoryType: "Textbook" }),
         books[4] = new ContentCard({ id: 4, title: "Sichuan Cuisine", description: "Food making", categoryType: "reference book" });
-    // console.log("this title is: ", books[0].id.title);
-    ContentCard.prototype.toString = function addElement() {
-        let ostring = `<div id="content-"+this.id.id>` + `<h4>${this.id.title}</h4>` + `<p>${this.id.description}</p>` + `<div>${this.id.categoryType}</div>` + `</div>`;
-        console.log(ostring);
-        return ostring;
-    }
+
+
     for (let x of books) {
-        console.log("this title is: ", x.id.title);
-        ContentCard.prototype.toString();
-        // updateContent(x.id.title, x.id.description, x.id.categoryType);
-        // console.log(x.id.title, x.id.description, x.id.categoryType)
-        // $("#content-list").html(toString());
+        let text = `<div id="content-"+x.id.id>` + `<h4>${x.id.title}</h4>` + `<p>${x.id.description}</p>` + `<div>${x.id.categoryType}</div>` + `</div>`;
+        $("#content-list").append(text);
     }
 });
