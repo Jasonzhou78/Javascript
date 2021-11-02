@@ -11,14 +11,19 @@ $(document).ready(function() {
             this.title = title;
             this.description = description;
             this.categoryType = categoryType;
-            updateContent(title, description, categoryType) {
 
+            function updateContent(title, description, categoryType) {
+                if (title != null) {
+                    return title;
+                }
+                if (description != null) {
+                    return description;
+                }
+                if (categoryType != null) {
+                    return categoryType;
+                }
             }
         }
-
-
     }
-
-}
 
 });
