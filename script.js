@@ -28,7 +28,11 @@ $(document).ready(function() {
             }
 
             function toString() {
-
+                console.log(`<div id="content-"+this.id>`);
+                console.log(`<h4>${this.title}</h4>`);
+                console.log(`<p>${this.description}</p>`);
+                console.log(`<div>${this.categoryType}</div>`);
+                console.log("</div>");
             }
         }
     }
