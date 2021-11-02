@@ -9,7 +9,7 @@ $(document).ready(function() {
         id;
         title;
         description;
-
+        categoryType;
     }
 
 }
