@@ -3,12 +3,15 @@
     Zhijun Zhou
 */
 
-$(document).ready(function(){
-    id;
-    title;
-    description;
-    categoryType;
+$(document).ready(function() {
+
+    class ContentCard {
+        id;
+        title;
+        description;
+
+    }
+
+}
 
 });
-
-
