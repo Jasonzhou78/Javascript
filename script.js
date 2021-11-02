@@ -1,10 +1,13 @@
 /*
     Assignment 5
-    {Your name here}
+    Zhijun Zhou
 */
 
 $(document).ready(function(){
-    // your code here
+    id;
+    title;
+    description;
+    categoryType;
 
 });
 
