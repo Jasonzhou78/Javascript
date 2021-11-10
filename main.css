@@ -1,0 +1,115 @@
+html {
+    font-family: 'Noto Serif Display', serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0 auto;
+}
+
+body {
+    width: 960px;
+    background-color: oldlace;
+}
+
+#accordion {
+    width: 55%;
+    margin: 0 auto;
+    /* border-style: solid;
+    border-width: 2px; */
+}
+
+#accordion ul li {
+    color: cadetblue;
+    list-style: none;
+    /* height: 140px; */
+    padding: 0;
+    margin: 0;
+}
+
+#nav ul li {
+    display: inline-block;
+    width: 33%;
+    color: blueviolet;
+}
+
+button {
+    width: 50%;
+}
+
+.tabPanel.active {
+    display: block;
+}
+
+#tab-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#tab-list li {
+    display: inline-block;
+    background-color: grey;
+}
+
+#tab-list li:first-of-type {
+    background-color: chocolate;
+}
+
+#tab-list li a {
+    display: inline-block;
+}
+
+.active {
+    display: inline-block;
+    background-color: chocolate;
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+#wwiContentTab,
+#wwiiContentTab {
+    display: none;
+}
+
+h1,
+h2 {
+    text-align: center;
+    background-color: lightgrey;
+    position: relative;
+}
+
+aside {
+    line-height: 0.5em;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+edu,
+wwi,
+wwii {
+    text-align: center;
+    font-style: bold;
+    color: orangered;
+}
+
+div#permanentContent {
+    border: 3px;
+}
+
+
+/* ********************** */
