@@ -1,5 +1,4 @@
 $(function() {
-
     let results = [];
     $.get("movies.json", function(data) {
         // let $tableBody = $('<tbody></tbody>');
