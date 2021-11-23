@@ -1,11 +1,18 @@
 $(function() {
-    $.getJSON("Movies.json", function(data) {
+    $.getJSON("movies.json", function(data) {
         let results = [];
-        Movies.forEach(function(movie))
-        console.log(data.title);
-        console.log(data.releasingDate);
-        console.log(data.director);
-        console.log(data.rating);
+        movie.forEach(function(data) {
+            results.push(data);
+        });
+        let $tableBody = $('<tbody></tbody>');
+        for (let i = 0; i < results.length; i++) {
+            let $row = $('<tr></tr>');
+            $row.append($('<td></td>').text(data.title));
+            $row.append($('<td></td>').text(data.releasingDate));
+            $row.append($('<td></td>').text(data.director));
+            $row.append($('<td></td>').text(data.rating));
+        }
+        $('thead').after($tableBody);
     }).fail(function() {
         console.log("An error has occurred.");
     });
