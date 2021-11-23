@@ -1,15 +1,15 @@
 $(function() {
     let results = [];
     $.get("movies.json", function(data) {
-        // let $tableBody = $('<tbody></tbody>');
-        console.log(data.movies.length);
-        // for (let i = 0; i < data.movies.length; i++) {
-        //     let $row = $('<tr></tr>');
-        //     $row.append($('<td></td>').text(data.title));
-        //     $row.append($('<td></td>').text(data.releasingDate));
-        //     $row.append($('<td></td>').text(data.director));
-        //     $row.append($('<td></td>').text(data.rating));
-        //     $('thead').after($tableBody);
-        // }
+        let $tableBody = $('<tbody></tbody>');
+        for (let i = 0; i < data.movies.length; i++) {
+            let $row = $('<tr></tr>');
+            $row.append($('<td></td>').text(data.movies.title));
+            $row.append($('<td></td>').text(data.movies.releasingDate));
+            $row.append($('<td></td>').text(data.movies.director));
+            $row.append($('<td></td>').text(data.movies.rating));
+            $tableBody.append($row);
+        }
+        $('thead').after($tableBody);
     });
 });
