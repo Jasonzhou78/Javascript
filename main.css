@@ -1,0 +1,9 @@
+table {
+    table-layout: auto;
+    margin: 0 auto;
+    width: 200px;
+}
+
+label {
+    font-style: bold;
+}
