@@ -1,0 +1,63 @@
+{
+    "movies": [{
+            "title": "Never Sometimes Always",
+            "releasingDate": "2015-02-09",
+            "director": "Eliza Hittman",
+            "rating": "7"
+        },
+        {
+            "title": "First Cow",
+            "releasingDate": "2020-03-19",
+            "director": "Kelly Reichardt",
+            "rating": "7"
+        },
+        {
+            "title": "Lovers Rock",
+            "releasingDate": "2020-12-11",
+            "director": "Steve McQueen",
+            "rating": "8"
+        },
+        {
+            "title": "I am Thinking of Ending Things",
+            "releasingDate": "2020-11-13",
+            "director": "Charlie Kaufman",
+            "rating": "5"
+        },
+        {
+            "title": "Eternals",
+            "releasingDate": "2021-09-24",
+            "director": "Chloé Zhao",
+            "rating": "7"
+        },
+        {
+            "title": "Dune",
+            "releasingDate": "2021-08-29",
+            "director": "Denis Villeneuve",
+            "rating": "8"
+        },
+        {
+            "title": "The Harder They Fall",
+            "releasingDate": "2021-01-01",
+            "director": "Jeymes Samuel",
+            "rating": "7"
+        },
+        {
+            "title": "A Beautiful Day In The Neighborhood",
+            "releasingDate": "2019-09-27",
+            "director": "Jason Smith",
+            "rating": "7"
+        },
+        {
+            "title": "Knives Out",
+            "releasingDate": "2019-06-17",
+            "director": "Jeymes Samuel",
+            "rating": "9"
+        },
+        {
+            "title": "Little Women",
+            "releasingDate": "2010-11-18",
+            "director": "Jeymes Samuel",
+            "rating": "9"
+        }
+    ]
+}
