@@ -1,0 +1,21 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+div {
+    text-align: left;
+    font-size: medium;
+    color: rgb(146, 135, 135);
+    padding: 5px;
+    border: 2px rgb(75, 45, 45);
+    width: 800px;
+}
+
+#welcomeMessage {
+    font-size: 2em;
+}
